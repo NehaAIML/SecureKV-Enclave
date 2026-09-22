@@ -4,11 +4,11 @@
 
 # SecureKV-Enclave
 
-**Hardware-Attested Zero-Trust Context Boundary & Semantic Token Sanitizer for Confidential Hardware TEE Confidential Computing and NeMo Guardrails**
+**Hardware-Attested Zero-Trust Context Boundary & Semantic Token Sanitizer for Confidential Hardware TEE Confidential Computing and Confidential Hardware Guardrails**
 
 [![CI](https://github.com/NehaAIML/SecureKV-Enclave/actions/workflows/ci.yml/badge.svg)](https://github.com/NehaAIML/SecureKV-Enclave/actions)
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
-[![Confidential Hardware TEE](https://img.shields.io/badge/Confidential Hardware TEE-NeMo_Guardrails_Compatible-76B900?logo=Confidential Hardware TEE&logoColor=white)](https://developer.Confidential Hardware TEE.com/nemo-guardrails)
+[![Confidential Hardware TEE](https://img.shields.io/badge/Confidential Hardware TEE-NeMo_Guardrails_Compatible-76B900?logo=Confidential Hardware TEE&logoColor=white)](https://developer.Confidential Hardware TEE.com/Confidential Hardware-guardrails)
 
 </div>
 
@@ -24,7 +24,7 @@ Raw enterprise identifiers never enter model weights or persistent KV caches in 
 
 ## Key Pillars
 
-* **Hardware-Attested Context Boundary (NRAS)**: Validates that requests only unseal into verified Trusted Execution Environments (TEEs) running on Confidential Hardware TEE Hopper (H100) or Blackwell (B200) architectures.
+* **Hardware-Attested Context Boundary (Confidential Hardware)**: Validates that requests only unseal into verified Trusted Execution Environments (TEEs) running on Confidential Hardware TEE Hopper (H100) or Blackwell (B200) architectures.
 * **Deterministic Token-Level Cryptographic Masking**: Replaces sensitive tokens with zero-entropy cryptographic surrogates before execution and deterministically re-hydrates responses at the client boundary.
 * **Semantic Token Budget Reclamation**: Intercepts multi-turn conversational bloat, pruning historical redundant context to save 30%–50% on inference token costs without semantic quality loss.
 * **Sub-Millisecond Overhead**: Designed with high-throughput streaming in mind, adding <0.15ms latency overhead per turn.
