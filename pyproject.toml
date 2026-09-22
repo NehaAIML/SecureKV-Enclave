@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "securekv-enclave"
+version = "0.1.0"
+description = "Hardware-Attested Zero-Trust Context Router & Token Sanitizer for NVIDIA NeMo and Confidential Computing"
+authors = [{ name = "Neha Purohit", email = "neha.purohit.ai@gmail.com" }]
+license = { text = "Apache-2.0" }
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi>=0.110.0",
+    "pydantic>=2.6.0",
+    "cryptography>=42.0.0",
+    "tiktoken>=0.6.0"
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["securekv*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
