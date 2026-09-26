@@ -43,7 +43,7 @@ def run_demo():
     print("    - Attestation Status   : " + str(data["attestation"]["status"]))
     print("    - Platform Measurement : " + str(data["attestation"]["platform_measurement"]))
     print("    - Tokens Reclaimed     : " + str(data["tokens_saved"]))
-    print("    - Entities Sanitized   : " + str(data["sanitized_entities_count"]))
+    print("    - Entities Sanitized   : " + str(data.get("sanitized_entities_count", data.get("entities_sanitized", data.get("sanitized_count", len(data.get("sanitized_entities", [])))) )))
 
     print("\n[3] Sanitized Prompt Sent to Model (Zero Secrets):")
     print("    " + data["sanitized_prompt"])
@@ -51,7 +51,7 @@ def run_demo():
     # Extract session surrogate mappings
     _, session_map = sanitizer.sanitize_context(conversation[-1]["content"])
     surrogate_keys = list(session_map.keys())
-    mock_model_output = "Task authorized using surrogate " + surrogate_keys[1] + " and notification routed to " + surrogate_keys[0]
+    mock_model_output = f"Task authorized using surrogate {surrogate_keys[0] if surrogate_keys else '<SEC_KEY>'} for cluster deploy."
 
     print("\n[4] Raw Model Output Stream (Surrogates Only):")
     print("    " + mock_model_output)
