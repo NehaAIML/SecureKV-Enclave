@@ -1,0 +1,21 @@
+When I think of running business AI,
+the system remembers everything you told it.
+
+That sounds like a helpful feature—until you realize what it actually means.
+
+Every API key, customer record, and confidential strategy doc pasted into a prompt doesn't just answer today’s question. It lingers inside shared memory, GPU caches, and context logs. The chatbot replies with a polite, innocent smile—while behind the scenes, your private credentials are quietly trapped in the machine.
+
+True enterprise AI shouldn't need to keep your raw secrets to be smart.
+
+To solve this, I built SecureKV-Enclave—an ultra-low latency (<0.15ms) security sidecar that establishes a verified hardware trust boundary before prompt execution:
+
+1. Hides real secrets before the AI sees them: Replaces raw credentials and sensitive identifiers with salted dummy tokens before execution, then deterministically restores them only when the answer reaches the client.
+2. Trims conversational baggage: Intercepts multi-turn history, pruning redundant context to recover 30% to 50% on token compute costs without semantic loss.
+3. Verifies the hardware: Validates isolated Confidential Computing TEE enclaves before data ever moves.
+
+Watch the 4-second clip below: raw credentials go in, the AI only ever sees surrogate tokens, and the real secret never enters model memory.
+
+Star the repository on GitHub:
+https://github.com/NehaAIML/SecureKV-Enclave
+
+#ConfidentialComputing #ZeroTrust #LLMOps #MachineLearning #EnterpriseAI #InformationSecurity #CloudInfrastructure #AIArchitecture
